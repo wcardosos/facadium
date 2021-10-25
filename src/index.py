@@ -1,7 +1,13 @@
-from lib.selenium import Selenium
+from worker import *
+import time
 
-browser = Selenium.init()
 
-browser.get('https://www.google.com.br/')
+def run():
+    try:
+        while True:
+            time.sleep(5) # Tempo de sleep ainda a definir
+            worker()
+    except:
+        print("Saiu do loop")
 
-print(f"Título da página: {browser.title}")
+run()
